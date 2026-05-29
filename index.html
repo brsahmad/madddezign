@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurelia Vance — Responsive Web & Editorial Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Space Grotesk (Display & Captions), Playfair Display (Editorial Headline), Plus Jakarta Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        museumBlack: '#FFFFFF', // Inverted to White for Foreground Elements
+                        museumGray: '#18181B',  // Inverted to Dark Gray (zinc-900)
+                        museumBorder: '#27272A',// Inverted to Medium Dark Gray (zinc-800)
+                        museumWhite: '#09090B', // Inverted to Almost Black (zinc-950)
+                    },
+                    fontFamily: {
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                        headline: ['"Playfair Display"', 'serif'],
+                        body: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --system-spacing: 16px;
+        }
+
+        body {
+            background-color: #09090B;
+            color: #FFFFFF;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .transition-editorial {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Typography Classes mapped to new-hello-museum-design-system guidelines */
+        .display-heading {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        .headline {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+        }
+
+        .caption-meta {
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Grid Background styling */
+        .grid-guide-line {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+            background-size: var(--system-spacing) var(--system-spacing);
+        }
+    </style>
+</head>
+<body class="min-h-screen selection:bg-white selection:text-zinc-950 antialiased relative">
+
+    <!-- MAIN CONTAINER WITH SYSTEM-STANDARD THIN BORDERS -->
+    <div class="max-w-[1600px] mx-auto min-h-screen border-l border-r border-museumBorder relative bg-museumWhite">
+        
+        <!-- Background Grid Guide Lines (Interactive toggle fallback if ever re-enabled) -->
+        <div id="grid-background-overlay" class="absolute inset-0 grid-guide-line opacity-10 pointer-events-none transition-opacity duration-500 z-10"></div>
+
+        <!-- HEADER GRID SECTION -->
+        <header class="grid grid-cols-1 lg:grid-cols-12 border-b border-museumBorder bg-museumWhite/95 backdrop-blur-md relative z-20">
+            <!-- Brand Column -->
+            <div class="lg:col-span-4 p-6 md:p-8 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-museumBorder">
+                <div>
+                    <span class="caption-meta block text-zinc-400 mb-1">AURELIA VANCE Portfolio</span>
+                    <h1 class="display-heading text-2xl tracking-tight leading-none text-white">
+                        WEB ARCHITECT<sup>©</sup>
+                    </h1>
+                </div>
+                <div class="mt-4 lg:mt-8">
+                    <p class="text-xs text-zinc-500 font-mono tracking-widest">DESIGN SPECIFICATION: NEW-HELLO-MUSEUM.HTML</p>
+                </div>
+            </div>
+            
+            <!-- Description Column -->
+            <div class="lg:col-span-5 p-6 md:p-8 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-museumBorder">
+                <p class="headline text-lg md:text-xl leading-snug text-zinc-100">
+                    Curating responsive digital canvas systems, web-native typographic grids, and custom browser architecture matching editorial book design principles.
+                </p>
+                <div class="flex items-center gap-4 text-xs font-mono text-zinc-500 mt-4">
+                    <span>PALETTE: #111111 / #F5F5F5 / #DDDDDD</span>
+                    <span>•</span>
+                    <span id="live-time-ticker">00:00:00 UTC</span>
+                </div>
+            </div>
+
+            <!-- Navigation Column -->
+            <nav class="lg:col-span-3 grid grid-cols-2 lg:grid-cols-1 text-xs">
+                <a href="#hero-concept-section" class="flex items-center justify-between p-6 border-b border-r lg:border-r-0 border-museumBorder hover:bg-museumBlack hover:text-museumWhite transition-editorial group">
+                    <span class="caption-meta">00 / HERO CONCEPT</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-editorial transform translate-x-[-10px] group-hover:translate-x-0"></i>
+                </a>
+                <a href="#project-archive" class="flex items-center justify-between p-6 border-b border-museumBorder hover:bg-museumBlack hover:text-museumWhite transition-editorial group">
+                    <span class="caption-meta">01 / BRUTALIST ARCHIVE</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-editorial transform translate-x-[-10px] group-hover:translate-x-0"></i>
+                </a>
+                <a href="#project-journal" class="flex items-center justify-between p-6 border-b border-r lg:border-r-0 border-museumBorder hover:bg-museumBlack hover:text-museumWhite transition-editorial group">
+                    <span class="caption-meta">02 / WEB JOURNAL ENGINE</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-editorial transform translate-x-[-10px] group-hover:translate-x-0"></i>
+                </a>
+                <a href="#project-ledger" class="flex items-center justify-between p-6 lg:border-b-0 hover:bg-museumBlack hover:text-museumWhite transition-editorial group">
+                    <span class="caption-meta">03 / APPLICATION LEDGER</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-editorial transform translate-x-[-10px] group-hover:translate-x-0"></i>
+                </a>
+            </nav>
+        </header>
+
+        <!-- THE HERO CONCEPT SECTION -->
+        <section id="hero-concept-section" class="grid grid-cols-1 lg:grid-cols-12 border-b border-museumBorder bg-museumGray relative z-20">
+            <!-- Hero Statement Left -->
+            <div class="lg:col-span-8 p-8 md:p-16 lg:p-20 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-museumBorder relative overflow-hidden group min-h-[500px]">
+                <!-- System-Standard Watermark Background -->
+                <div class="absolute -bottom-12 -right-12 text-[12vw] font-bold text-zinc-800/10 pointer-events-none select-none tracking-tighter uppercase display-heading">
+                    HTML.26
+                </div>
+                
+                <div class="max-w-3xl relative z-10">
+                    <span class="caption-meta text-zinc-500 mb-6 block">WEB DESIGN PHILOSOPHY</span>
+                    <h2 class="display-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9] text-white mb-8">
+                        THE BROWSER IS THE ARCHITECTURE OF DIGITAL MIND.
+                    </h2>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-8 justify-between items-start sm:items-end relative z-10 mt-12">
+                    <p class="text-sm max-w-md text-zinc-400 leading-relaxed font-body">
+                        Through strict structural boundaries and responsive layout guidelines, Aurelia Vance establishes curated digital interfaces. Leveraging Tailwind CSS utility flow, this online canvas scales perfectly with structural fluidity.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#project-archive" class="group/btn inline-flex items-center gap-3 bg-white text-zinc-950 hover:bg-zinc-200 transition-editorial px-6 py-4 text-xs font-mono font-bold tracking-widest uppercase rounded-sm">
+                            ENTER WEBPAGE DIRECTIVE
+                            <i data-lucide="chevron-down" class="w-4 h-4 group-hover/btn:translate-y-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Visual Right -->
+            <div class="lg:col-span-4 flex flex-col items-center justify-center bg-museumWhite border-t lg:border-t-0 border-museumBorder relative overflow-hidden p-8 md:p-12 z-10 min-h-[400px]">
+                <div class="absolute inset-0 grid-guide-line opacity-[0.08] pointer-events-none"></div>
+                
+                <div class="w-full flex justify-between items-start absolute top-8 left-8 right-8">
+                    <span class="caption-meta text-zinc-500">SYSTEM ARCHITECT</span>
+                    <span class="text-[10px] font-mono bg-zinc-900 text-zinc-400 px-2 py-0.5 border border-zinc-800">FIG. 01</span>
+                </div>
+
+                <div class="w-full flex items-center justify-center mt-8 relative z-10">
+                    <!-- Abstract Designer SVG -->
+                    <svg viewBox="0 0 400 400" class="w-full max-w-[280px] h-auto drop-shadow-2xl transition-transform duration-700 hover:scale-105" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <pattern id="miniGrid" width="16" height="16" patternUnits="userSpaceOnUse">
+                                <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#27272a" stroke-width="0.5"/>
+                            </pattern>
+                            <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#18181b" />
+                                <stop offset="100%" stop-color="#09090b" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Background Canvas -->
+                        <rect width="400" height="400" fill="#09090b" rx="8" />
+                        <rect width="400" height="400" fill="url(#miniGrid)" rx="8" />
+                        
+                        <!-- Screen 1 (Vertical) -->
+                        <g transform="translate(40, 70)">
+                            <!-- Stand -->
+                            <rect x="35" y="160" width="10" height="40" fill="#27272a"/>
+                            <rect x="15" y="195" width="50" height="5" fill="#3f3f46"/>
+                            <!-- Monitor -->
+                            <rect x="0" y="0" width="80" height="160" rx="4" fill="url(#screenGrad)" stroke="#52525b" stroke-width="2"/>
+                            <!-- Wireframes -->
+                            <rect x="10" y="15" width="60" height="5" fill="#3f3f46" rx="1"/>
+                            <rect x="10" y="30" width="40" height="4" fill="#52525b" rx="1"/>
+                            <rect x="10" y="40" width="50" height="4" fill="#52525b" rx="1"/>
+                            <rect x="10" y="60" width="60" height="40" fill="#27272a" rx="2" stroke="#52525b" stroke-width="1" stroke-dasharray="2"/>
+                        </g>
+                        
+                        <!-- Screen 2 (Main) -->
+                        <g transform="translate(140, 100)">
+                            <!-- Stand -->
+                            <rect x="75" y="130" width="20" height="40" fill="#27272a"/>
+                            <rect x="45" y="165" width="80" height="5" fill="#3f3f46"/>
+                            <!-- Monitor -->
+                            <rect x="0" y="0" width="170" height="130" rx="4" fill="url(#screenGrad)" stroke="#52525b" stroke-width="2"/>
+                            <!-- Design layout -->
+                            <rect x="15" y="15" width="110" height="80" fill="#ffffff" rx="2"/>
+                            <rect x="135" y="15" width="20" height="100" fill="#27272a" rx="2"/>
+                            <circle cx="145" cy="30" r="4" fill="#52525b"/>
+                            <circle cx="145" cy="50" r="4" fill="#52525b"/>
+                            <rect x="25" y="25" width="90" height="20" fill="#e4e4e7" rx="1"/>
+                            <rect x="25" y="55" width="40" height="30" fill="#d4d4d8" rx="1"/>
+                            <rect x="75" y="55" width="40" height="30" fill="#d4d4d8" rx="1"/>
+                        </g>
+                        
+                        <!-- Designer Figure -->
+                        <g transform="translate(120, 200)">
+                            <!-- Body -->
+                            <path d="M 30 150 C 30 70, 80 70, 80 150 Z" fill="#ffffff" opacity="0.95"/>
+                            <!-- Head -->
+                            <circle cx="55" cy="40" r="22" fill="#ffffff" />
+                            <!-- Visor/Glasses -->
+                            <rect x="35" y="30" width="40" height="12" rx="3" fill="#09090b" stroke="#52525b" stroke-width="1.5"/>
+                            <!-- Arm extending -->
+                            <path d="M 75 85 Q 120 95 160 110" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+                        </g>
+
+                        <!-- Desk Base -->
+                        <path d="M 20 280 L 380 280 L 400 350 L 0 350 Z" fill="#18181b" stroke="#3f3f46" stroke-width="2"/>
+                        
+                        <!-- Devices -->
+                        <rect x="150" y="300" width="80" height="20" rx="2" fill="#27272a" transform="skewX(-15)"/>
+                        <rect x="270" y="305" width="15" height="25" rx="5" fill="#3f3f46" transform="skewX(-10)"/>
+                    </svg>
+                </div>
+
+                <div class="absolute bottom-8 right-8 text-[10px] font-mono text-zinc-500 uppercase tracking-widest text-right">
+                    <span>DIGITAL SPACE</span><br>
+                    <span class="text-white">RECONSTRUCTION</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORK SECTION 01: THE DIGITAL BRUTALIST ARCHIVE -->
+        <section id="project-archive" class="scroll-mt-14 border-b border-museumBorder bg-museumWhite relative z-20">
+            <div class="p-8 md:p-16 lg:p-20 max-w-[1200px] mx-auto flex flex-col gap-10">
+                
+                <!-- Title & Meta -->
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-3 text-xs font-mono text-zinc-400">
+                        <span>PROJECT INDEX_01</span>
+                        <span>•</span>
+                        <span class="bg-zinc-900 border border-zinc-800 text-zinc-300 px-2.5 py-0.5 uppercase tracking-wider text-[10px]">BROWSER DIRECTIVE</span>
+                    </div>
+                    <h2 class="display-heading text-4xl sm:text-5xl lg:text-6xl text-white">
+                        THE BRUTALIST WEB ARCHIVE
+                    </h2>
+                    <!-- Tools Details -->
+                    <div class="flex flex-wrap gap-2 text-[10px] uppercase tracking-widest font-mono mt-2">
+                        <span class="bg-white text-zinc-950 px-3 py-1.5 font-bold">HTML5</span>
+                        <span class="bg-white text-zinc-950 px-3 py-1.5 font-bold">TAILWIND CSS</span>
+                        <span class="bg-white text-zinc-950 px-3 py-1.5 font-bold">VANILLA JS</span>
+                    </div>
+                </div>
+
+                <!-- Visual / Image -->
+                <div class="w-full bg-museumGray border border-museumBorder min-h-[400px] relative overflow-hidden flex items-center justify-center p-8 group">
+                    <div class="absolute inset-0 grid-guide-line opacity-20 pointer-events-none"></div>
+                    <!-- Abstract visual representing the project -->
+                    <div class="w-full max-w-lg aspect-square sm:aspect-video border border-dashed border-zinc-700 relative flex flex-col items-center justify-center bg-zinc-950 shadow-xl transition-all duration-500 group-hover:scale-[1.02]">
+                        <div class="w-full border-b border-museumBorder px-4 py-2 flex justify-between items-center text-[10px] font-mono text-zinc-500 bg-museumGray">
+                            <span>ARCHIVE.MUSEUM.ORG/PORTAL</span>
+                            <span class="font-bold text-white">STATUS: 200 OK</span>
+                        </div>
+                        <div class="flex-grow flex items-center justify-center text-xs font-mono text-zinc-400 uppercase tracking-widest">
+                            [ RESPONSIVE VIEWPORT SIMULATION ]
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specifications -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-[10px] font-mono border-t border-museumBorder pt-6 uppercase tracking-widest">
+                    <div>
+                        <span class="text-zinc-500 block mb-1">GRID SYSTEM</span>
+                        <span class="text-white font-bold text-xs">4-COLUMN INNER</span>
+                    </div>
+                    <div>
+                        <span class="text-zinc-500 block mb-1">CSS LAYER CALC</span>
+                        <span class="text-white font-bold text-xs">SPEC IMPLEMENTED</span>
+                    </div>
+                    <div>
+                        <span class="text-zinc-500 block mb-1">ACCESSIBILITY</span>
+                        <span class="text-emerald-500 font-bold text-xs flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full inline-block animate-pulse"></span> WCAG AAA
+                        </span>
+                    </div>
+                    <div>
+                        <span class="text-zinc-500 block mb-1">CURATORIAL KEY</span>
+                        <span class="text-white font-bold text-xs">ARCHIVE_01.HTML</span>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- WORK SECTION 02: THE CHRONICLE ONLINE (Editorial Web Design) -->
+        <section id="project-journal" class="scroll-mt-14 border-b border-museumBorder bg-museumWhite relative z-20">
+            <div class="p-8 md:p-16 lg:p-20 max-w-[1200px] mx-auto flex flex-col gap-10">
+                
+                <!-- Title & Meta -->
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-3 text-xs font-mono text-zinc-400">
+                        <span>PROJECT INDEX_02</span>
+                        <span>•</span>
+                        <span class="bg-zinc-900 border border-zinc-800 text-zinc-300 px-2.5 py-0.5 uppercase tracking-wider text-[10px]">EDITORIAL ENGINE</span>
+                    </div>
+                    <h2 class="display-heading text-4xl sm:text-5xl lg:text-6xl text-white">
+                        THE CHRONICLE DIGITAL SYSTEM
+                    </h2>
+                    <!-- Tools Details -->
+                    <div class="flex flex-wrap gap-2 text-[10px] uppercase tracking-widest font-mono mt-2">
+                        <span class="bg-white text-zinc-950 px-3 py-1.5 font-bold">CSS GRID</span>
+                        <span class="bg-white text-zinc-950 px-3 py-1.5 font-bold">REM VALUE MATH</span>
+                        <span class="bg-white text-zinc-950 px-3 py-1.5 font-bold">SUBPIXEL ANTIALIASING</span>
+                    </div>
+                </div>
+
+                <!-- Visual / Image -->
+                <div class="w-full bg-museumGray border border-museumBorder min-h-[400px] relative overflow-hidden flex items-center justify-center p-4 sm:p-8 group">
+                    <div class="absolute inset-0 grid-guide-line opacity-20 pointer-events-none"></div>
+                    <!-- Double Page Spread Mockup -->
+                    <div class="w-full max-w-2xl bg-zinc-950 border border-museumBorder shadow-2xl p-4 sm:p-6 relative flex gap-4 sm:gap-6 transition-all duration-500 group-hover:-translate-y-2">
+                        <!-- Left Page -->
+                        <div class="w-1/2 border border-dashed border-zinc-700 aspect-[1/1.4] p-3 sm:p-4 flex flex-col justify-between">
+                            <div>
+                                <div class="w-full h-1.5 sm:h-2 bg-white mb-3 sm:mb-4"></div>
+                                <div class="w-3/4 h-1 bg-zinc-800 mb-2"></div>
+                                <div class="w-full h-1 bg-zinc-800 mb-2"></div>
+                                <div class="w-5/6 h-1 bg-zinc-800"></div>
+                            </div>
+                            <div class="text-[8px] font-mono text-zinc-500">FIG 01. LAYOUT</div>
+                        </div>
+                        <!-- Mid Spread Fold -->
+                        <div class="hidden sm:block absolute inset-y-0 left-1/2 w-px bg-zinc-800 z-10 border-dashed border-l border-zinc-700"></div>
+                        <!-- Right Page -->
+                        <div class="w-1/2 border border-dashed border-zinc-700 aspect-[1/1.4] p-3 sm:p-4 flex flex-col justify-end items-end text-right">
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full border border-white mb-3 sm:mb-4 flex items-center justify-center">
+                                <div class="w-6 h-6 sm:w-8 sm:h-8 border-2 border-white"></div>
+                            </div>
+                            <div class="w-full h-1 bg-zinc-800 mb-2"></div>
+                            <div class="w-4/5 h-1 bg-zinc-800"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specifications -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-[10px] font-mono border-t border-museumBorder pt-6 uppercase tracking-widest">
+                    <div>
+                        <span class="text-zinc-500 block mb-1">LAYOUT ENGINE</span>
+                        <span class="text-white font-bold text-xs">RESPONSIVE FLEXBOX</span>
+                    </div>
+                    <div>
+                        <span class="text-zinc-500 block mb-1">TYPE RENDERING</span>
+                        <span class="text-white font-bold text-xs">SUBPIXEL ENGINE</span>
+                    </div>
+                    <div>
+                        <span class="text-zinc-500 block mb-1">CSS PAINT CYCLE</span>
+                        <span class="text-emerald-500 font-bold text-xs flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full inline-block animate-pulse"></span> 100% VALID
+                        </span>
+                    </div>
+                    <div>
+                        <span class="text-zinc-500 block mb-1">TEMPLATE OVERRIDE</span>
+                        <span class="text-white font-bold text-xs">SYSTEM-II</span>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- WORK SECTION 03: SYNTAX PROTOCOL LEDGER (Web App UI Case) -->
+        <section id="project-ledger" class="scroll-mt-14 border-b border-museumBorder bg-museumWhite relative z-20">
+            <div class="p-8 md:p-16 lg:p-20 max-w-[1200px] mx-auto flex flex-col gap-10">
+                
+                <!-- Title & Meta -->
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-3 text-xs font-mono text-zinc-400">
+                        <span>PROJECT INDEX_03</span>
+                        <span>•</span>
+                        <span class="bg-zinc-900 border border-zinc-800 text-zinc-300 px-2.5 py-0.5 uppercase tracking-wider text-[10px]">APPLICATION UI</span>
+                    </div>
+                    <h2 class="display-heading text-4xl sm:text-5xl lg:text-6xl text-white">
+                        SYNTAX LEDGER INTERFACE
+                    </h2>
+                    <!-- Tools Details -->
+                    <div class="flex flex-wrap gap-2 text-[10px] uppercase tracking-widest font-mono mt-2">
+                        <span class="bg-white text-zinc-950 px-3 py-1.5 font-bold">WEB TERMINAL API</span>
+                        <span class="bg-white text-zinc-950 px-3 py-1.5 font-bold">SYSTEM CLASSIFY</span>
+                        <span class="bg-white text-zinc-950 px-3 py-1.5 font-bold">RAW TELEMETRY</span>
+                    </div>
+                </div>
+
+                <!-- Visual / Image -->
+                <div class="w-full bg-museumGray border border-museumBorder min-h-[400px] relative overflow-hidden flex items-center justify-center p-8 group">
+                    <div class="absolute inset-0 grid-guide-line opacity-20 pointer-events-none"></div>
+                    <!-- Virtual UI Console Layout -->
+                    <div class="w-full max-w-xl bg-[#050505] text-zinc-300 p-6 font-mono border border-zinc-800 shadow-2xl relative transition-all duration-500 group-hover:scale-[1.02]">
+                        <div class="flex justify-between items-center text-[8px] sm:text-[10px] text-zinc-500 border-b border-zinc-800 pb-3 mb-4">
+                            <span>LEDGER LAYOUT INTERACTIVE METRIC</span>
+                            <span class="text-emerald-400">COMPLIANCE LEVEL : 100% CORRECT</span>
+                        </div>
+                        <div class="space-y-4 text-[10px] sm:text-xs">
+                            <div class="flex justify-between items-center border-b border-zinc-900 pb-2">
+                                <span class="text-zinc-400">01. DOM_CONTAINER_LOADED</span>
+                                <span class="text-emerald-500">[SUCCESS]</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-zinc-900 pb-2">
+                                <span class="text-zinc-400">02. VERIFY_MUSEUM_TOKENS</span>
+                                <span class="text-emerald-500">[VERIFIED]</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-zinc-900 pb-2">
+                                <span class="text-zinc-400">03. RENDER_12_COL_GRID</span>
+                                <span class="text-emerald-500">[MATCHED]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specifications -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-[10px] font-mono border-t border-museumBorder pt-6 uppercase tracking-widest">
+                    <div>
+                        <span class="text-zinc-500 block mb-1">GRID ALIGNMENT</span>
+                        <span class="text-white font-bold text-xs">STRICT 12-COLUMN</span>
+                    </div>
+                    <div>
+                        <span class="text-zinc-500 block mb-1">INTERACTIVE INGEST</span>
+                        <span class="text-white font-bold text-xs">TERMINAL PROXY</span>
+                    </div>
+                    <div>
+                        <span class="text-zinc-500 block mb-1">SYSTEM STATUS</span>
+                        <span class="text-emerald-500 font-bold text-xs flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full inline-block animate-pulse"></span> LEDGER GRADE-A
+                        </span>
+                    </div>
+                    <div>
+                        <span class="text-zinc-500 block mb-1">RENDERER</span>
+                        <span class="text-white font-bold text-xs">CANVAS MOCKED</span>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- CORE FOOTER SECTION -->
+        <footer class="p-8 md:p-16 bg-[#0a0a0a] border-t border-museumBorder text-zinc-300 relative z-20">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 pb-12 border-b border-zinc-800">
+                <!-- Branding column -->
+                <div class="md:col-span-5">
+                    <span class="caption-meta text-zinc-500 block mb-2">COLLABORATE WITH AURELIA VANCE</span>
+                    <h2 class="display-heading text-3xl md:text-4xl text-white mb-4">LET'S RECONSTRUCT THE DIGITAL SPACE.</h2>
+                    <p class="text-sm text-zinc-400 font-body leading-relaxed max-w-sm">
+                        Available for commissions regarding web-app layout, custom digital publication design systems, and responsive portfolio directories.
+                    </p>
+                </div>
+
+                <!-- Spacer column -->
+                <div class="hidden md:block md:col-span-3"></div>
+
+                <!-- Info columns -->
+                <div class="md:col-span-4 space-y-6 text-xs font-mono text-zinc-400">
+                    <div>
+                        <span class="text-zinc-500 block mb-1">MUSEUM COMPLIANT INGEST</span>
+                        <a href="mailto:hello@aureliavance-design.de" class="text-white hover:underline text-sm font-bold">HELLO@AURELIAVANCE-DESIGN.DE</a>
+                    </div>
+                    <div>
+                        <span class="text-zinc-500 block mb-1">FRONT-END SPECS</span>
+                        <p class="text-white text-sm font-bold">MUNICH / BERLIN DIGITAL LABS</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright and standards badge -->
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-zinc-500">
+                <span>© 2026 AURELIA VANCE. ALL LAYOUT PRINCIPLES PROTECTED UNDER PROTOCOL M-11.</span>
+                <span class="bg-zinc-900 text-zinc-400 px-3 py-1 border border-zinc-800 uppercase tracking-widest text-[9px] rounded-sm">
+                    NEW HELLO MUSEUM VERIFIED
+                </span>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- JAVASCRIPT SYSTEM IMPLEMENTATIONS -->
+    <script>
+        // Start live ticker time tracking standard
+        window.onload = function() {
+            lucide.createIcons();
+            startLiveSystemClock();
+        };
+
+        function startLiveSystemClock() {
+            const ticker = document.getElementById('live-time-ticker');
+            if (ticker) {
+                setInterval(() => {
+                    const now = new Date();
+                    const clockStr = now.toISOString().replace('T', ' ').substr(11, 8) + ' UTC';
+                    ticker.innerText = clockStr;
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>
