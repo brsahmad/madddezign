@@ -111,10 +111,18 @@
       >
         <!-- Brand Column -->
         <div
-          class="lg:col-span-4 p-6 md:p-8 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-museumBorder"
+          class="lg:col-span-3 p-6 md:p-8 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-museumBorder relative overflow-hidden group"
         >
-          <div>
-            <span class="caption-meta block text-zinc-500 mb-1"
+          <!-- Background Image & Overlay -->
+          <div
+            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800')] bg-cover bg-top transition-transform duration-1000 group-hover:scale-105 z-0"
+          ></div>
+          <div
+            class="absolute inset-0 bg-museumWhite/85 backdrop-blur-[2px] transition-colors duration-500 group-hover:bg-museumWhite/75 z-0"
+          ></div>
+
+          <div class="relative z-10">
+            <span class="caption-meta block text-zinc-600 mb-1"
               >AURELIA VANCE Portfolio</span
             >
             <h1
@@ -123,8 +131,10 @@
               WEB ARCHITECT<sup>©</sup>
             </h1>
           </div>
-          <div class="mt-4 lg:mt-8">
-            <p class="text-xs text-zinc-400 font-mono tracking-widest">
+          <div class="mt-4 lg:mt-8 relative z-10">
+            <p
+              class="text-[10px] sm:text-xs text-zinc-700 font-mono tracking-widest bg-white/60 inline-block px-2 py-1 rounded backdrop-blur-sm border border-white/40"
+            >
               DESIGN SPECIFICATION: NEW-HELLO-MUSEUM.HTML
             </p>
           </div>
@@ -132,7 +142,7 @@
 
         <!-- Description Column -->
         <div
-          class="lg:col-span-5 p-6 md:p-8 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-museumBorder"
+          class="lg:col-span-6 p-6 md:p-8 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-museumBorder"
         >
           <p class="headline text-lg md:text-xl leading-snug text-zinc-800">
             Curating responsive digital canvas systems, web-native typographic
@@ -846,20 +856,20 @@
 
       <!-- CORE FOOTER SECTION -->
       <footer
-        class="p-8 md:p-16 bg-zinc-950 border-t border-museumBorder text-zinc-300 relative z-20"
+        class="p-8 md:p-16 bg-zinc-100 border-t border-museumBorder text-zinc-800 relative z-20"
       >
         <div
-          class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 pb-12 border-b border-zinc-800"
+          class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 pb-12 border-b border-zinc-300"
         >
           <!-- Branding column -->
           <div class="md:col-span-5">
             <span class="caption-meta text-zinc-500 block mb-2"
               >COLLABORATE WITH AURELIA VANCE</span
             >
-            <h2 class="display-heading text-3xl md:text-4xl text-white mb-4">
+            <h2 class="display-heading text-3xl md:text-4xl text-zinc-950 mb-4">
               LET'S RECONSTRUCT THE DIGITAL SPACE.
             </h2>
-            <p class="text-sm text-zinc-400 font-body leading-relaxed max-w-sm">
+            <p class="text-sm text-zinc-600 font-body leading-relaxed max-w-sm">
               Available for commissions regarding web-app layout, custom digital
               publication design systems, and responsive portfolio directories.
             </p>
@@ -869,20 +879,20 @@
           <div class="hidden md:block md:col-span-3"></div>
 
           <!-- Info columns -->
-          <div class="md:col-span-4 space-y-6 text-xs font-mono text-zinc-400">
+          <div class="md:col-span-4 space-y-6 text-xs font-mono text-zinc-500">
             <div>
-              <span class="text-zinc-500 block mb-1"
+              <span class="text-zinc-400 block mb-1"
                 >MUSEUM COMPLIANT INGEST</span
               >
               <a
                 href="mailto:hello@aureliavance-design.de"
-                class="text-white hover:underline text-sm font-bold"
+                class="text-zinc-950 hover:underline text-sm font-bold"
                 >HELLO@AURELIAVANCE-DESIGN.DE</a
               >
             </div>
             <div>
-              <span class="text-zinc-500 block mb-1">FRONT-END SPECS</span>
-              <p class="text-white text-sm font-bold">
+              <span class="text-zinc-400 block mb-1">FRONT-END SPECS</span>
+              <p class="text-zinc-950 text-sm font-bold">
                 MUNICH / BERLIN DIGITAL LABS
               </p>
             </div>
@@ -898,7 +908,7 @@
             PROTOCOL M-11.</span
           >
           <span
-            class="bg-zinc-900 text-zinc-400 px-3 py-1 border border-zinc-800 uppercase tracking-widest text-[9px] rounded-sm"
+            class="bg-zinc-200 text-zinc-600 px-3 py-1 border border-zinc-300 uppercase tracking-widest text-[9px] rounded-sm"
           >
             NEW HELLO MUSEUM VERIFIED
           </span>
