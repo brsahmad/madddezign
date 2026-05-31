@@ -115,7 +115,7 @@
         >
           <!-- Background Image & Overlay -->
           <div
-            class="absolute inset-0 bg-[url('./images/image1.png')] bg-cover bg-top transition-transform duration-1000 group-hover:scale-105 z-0"
+            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800')] bg-cover bg-top transition-transform duration-1000 group-hover:scale-105 z-0"
           ></div>
           <div
             class="absolute inset-0 bg-museumWhite/85 backdrop-blur-[2px] transition-colors duration-500 group-hover:bg-museumWhite/75 z-0"
@@ -123,19 +123,19 @@
 
           <div class="relative z-10">
             <span class="caption-meta block text-zinc-600 mb-1"
-              >My name is</span
+              >AURELIA VANCE Portfolio</span
             >
             <h1
               class="display-heading text-2xl tracking-tight leading-none text-zinc-950"
             >
-              Baraas Ahmad<sup>©</sup>
+              WEB ARCHITECT<sup>©</sup>
             </h1>
           </div>
           <div class="mt-4 lg:mt-8 relative z-10">
             <p
               class="text-[10px] sm:text-xs text-zinc-700 font-mono tracking-widest bg-white/60 inline-block px-2 py-1 rounded backdrop-blur-sm border border-white/40"
             >
-              Web designer & no-code developer
+              DESIGN SPECIFICATION: NEW-HELLO-MUSEUM.HTML
             </p>
           </div>
         </div>
@@ -552,26 +552,26 @@
 
           <!-- Visual / Image -->
           <div
-            class="w-full bg-museumGray border border-museumBorder min-h-[400px] relative overflow-hidden flex items-center justify-center p-8 group"
+            class="w-full bg-museumGray border border-museumBorder relative overflow-hidden group rounded-sm"
           >
             <div
-              class="absolute inset-0 grid-guide-line opacity-30 pointer-events-none"
+              class="absolute inset-0 grid-guide-line opacity-20 pointer-events-none z-10"
             ></div>
-            <!-- Abstract visual representing the project -->
+            <!-- Real Image Asset Representation with responsive behavior & fallback -->
+            <img
+              src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=1200"
+              alt="Brutalist Web Archive Structure"
+              class="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
+              onerror="
+                this.src =
+                  'https://placehold.co/1200x600/f4f4f5/09090b?text=Brutalist+Web+Archive'
+              "
+            />
+            <!-- Overlay Label Details -->
             <div
-              class="w-full max-w-lg aspect-square sm:aspect-video border border-dashed border-zinc-300 relative flex flex-col items-center justify-center bg-white shadow-xl transition-all duration-500 group-hover:scale-[1.02]"
+              class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 border border-museumBorder text-[10px] font-mono text-zinc-950 z-20 shadow-sm rounded-sm"
             >
-              <div
-                class="w-full border-b border-museumBorder px-4 py-2 flex justify-between items-center text-[10px] font-mono text-zinc-500 bg-museumGray"
-              >
-                <span>ARCHIVE.MUSEUM.ORG/PORTAL</span>
-                <span class="font-bold text-zinc-950">STATUS: 200 OK</span>
-              </div>
-              <div
-                class="flex-grow flex items-center justify-center text-xs font-mono text-zinc-400 uppercase tracking-widest"
-              >
-                [ RESPONSIVE VIEWPORT SIMULATION ]
-              </div>
+              ARCHIVE_PORTAL_VISUAL.PNG
             </div>
           </div>
 
@@ -655,49 +655,26 @@
 
           <!-- Visual / Image -->
           <div
-            class="w-full bg-museumGray border border-museumBorder min-h-[400px] relative overflow-hidden flex items-center justify-center p-4 sm:p-8 group"
+            class="w-full bg-museumGray border border-museumBorder relative overflow-hidden group rounded-sm"
           >
             <div
-              class="absolute inset-0 grid-guide-line opacity-30 pointer-events-none"
+              class="absolute inset-0 grid-guide-line opacity-20 pointer-events-none z-10"
             ></div>
-            <!-- Double Page Spread Mockup -->
+            <!-- Real Image Asset Representation with responsive behavior & fallback -->
+            <img
+              src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=1200"
+              alt="The Chronicle Editorial Interface"
+              class="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
+              onerror="
+                this.src =
+                  'https://placehold.co/1200x600/f4f4f5/09090b?text=The+Chronicle+System'
+              "
+            />
+            <!-- Overlay Label Details -->
             <div
-              class="w-full max-w-2xl bg-white border border-museumBorder shadow-xl p-4 sm:p-6 relative flex gap-4 sm:gap-6 transition-all duration-500 group-hover:-translate-y-2"
+              class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 border border-museumBorder text-[10px] font-mono text-zinc-950 z-20 shadow-sm rounded-sm"
             >
-              <!-- Left Page -->
-              <div
-                class="w-1/2 border border-dashed border-zinc-200 aspect-[1/1.4] p-3 sm:p-4 flex flex-col justify-between bg-zinc-50"
-              >
-                <div>
-                  <div
-                    class="w-full h-1.5 sm:h-2 bg-zinc-950 mb-3 sm:mb-4"
-                  ></div>
-                  <div class="w-3/4 h-1 bg-zinc-300 mb-2"></div>
-                  <div class="w-full h-1 bg-zinc-300 mb-2"></div>
-                  <div class="w-5/6 h-1 bg-zinc-300"></div>
-                </div>
-                <div class="text-[8px] font-mono text-zinc-400">
-                  FIG 01. LAYOUT
-                </div>
-              </div>
-              <!-- Mid Spread Fold -->
-              <div
-                class="hidden sm:block absolute inset-y-0 left-1/2 w-px bg-zinc-200 z-10 border-dashed border-l border-zinc-300"
-              ></div>
-              <!-- Right Page -->
-              <div
-                class="w-1/2 border border-dashed border-zinc-200 aspect-[1/1.4] p-3 sm:p-4 flex flex-col justify-end items-end text-right bg-zinc-50"
-              >
-                <div
-                  class="w-12 h-12 sm:w-16 sm:h-16 rounded-full border border-zinc-950 mb-3 sm:mb-4 flex items-center justify-center"
-                >
-                  <div
-                    class="w-6 h-6 sm:w-8 sm:h-8 border-2 border-zinc-950"
-                  ></div>
-                </div>
-                <div class="w-full h-1 bg-zinc-300 mb-2"></div>
-                <div class="w-4/5 h-1 bg-zinc-300"></div>
-              </div>
+              CHRONICLE_EDITORIAL_LAYOUT.PNG
             </div>
           </div>
 
@@ -779,43 +756,26 @@
 
           <!-- Visual / Image -->
           <div
-            class="w-full bg-museumGray border border-museumBorder min-h-[400px] relative overflow-hidden flex items-center justify-center p-8 group"
+            class="w-full bg-museumGray border border-museumBorder relative overflow-hidden group rounded-sm"
           >
             <div
-              class="absolute inset-0 grid-guide-line opacity-30 pointer-events-none"
+              class="absolute inset-0 grid-guide-line opacity-20 pointer-events-none z-10"
             ></div>
-            <!-- Virtual UI Console Layout - Kept somewhat dark for 'terminal' feel but lighter than before -->
+            <!-- Real Image Asset Representation with responsive behavior & fallback -->
+            <img
+              src="./images/img-works/vans.jpg"
+              alt="Syntax Ledger Application Interface"
+              class="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
+              onerror="
+                this.src =
+                  'https://placehold.co/1200x600/f4f4f5/09090b?text=Syntax+Ledger+UI'
+              "
+            />
+            <!-- Overlay Label Details -->
             <div
-              class="w-full max-w-xl bg-zinc-900 text-zinc-300 p-6 font-mono border border-zinc-800 shadow-xl relative transition-all duration-500 group-hover:scale-[1.02] rounded-md"
+              class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 border border-museumBorder text-[10px] font-mono text-zinc-950 z-20 shadow-sm rounded-sm"
             >
-              <div
-                class="flex justify-between items-center text-[8px] sm:text-[10px] text-zinc-500 border-b border-zinc-700 pb-3 mb-4"
-              >
-                <span>LEDGER LAYOUT INTERACTIVE METRIC</span>
-                <span class="text-emerald-400"
-                  >COMPLIANCE LEVEL : 100% CORRECT</span
-                >
-              </div>
-              <div class="space-y-4 text-[10px] sm:text-xs">
-                <div
-                  class="flex justify-between items-center border-b border-zinc-800 pb-2"
-                >
-                  <span class="text-zinc-400">01. DOM_CONTAINER_LOADED</span>
-                  <span class="text-emerald-400">[SUCCESS]</span>
-                </div>
-                <div
-                  class="flex justify-between items-center border-b border-zinc-800 pb-2"
-                >
-                  <span class="text-zinc-400">02. VERIFY_MUSEUM_TOKENS</span>
-                  <span class="text-emerald-400">[VERIFIED]</span>
-                </div>
-                <div
-                  class="flex justify-between items-center border-b border-zinc-800 pb-2"
-                >
-                  <span class="text-zinc-400">03. RENDER_12_COL_GRID</span>
-                  <span class="text-emerald-400">[MATCHED]</span>
-                </div>
-              </div>
+              SYNTAX_LEDGER_TERMINAL.PNG
             </div>
           </div>
 
